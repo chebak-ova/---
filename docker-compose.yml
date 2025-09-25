@@ -1,0 +1,67 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: oilops-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: appdb
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: apppassword
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: oilops-api
+    restart: unless-stopped
+    environment:
+      # Application Settings
+      APP_PROJECT_NAME: "Oil Shipment AI Ops"
+      APP_ENV: development
+      APP_DEBUG: "true"
+      APP_API_V1_PREFIX: /api/v1
+      APP_ALLOWED_ORIGINS: "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000"
+      
+      # Database Configuration
+      APP_POSTGRES_HOST: db
+      APP_POSTGRES_PORT: 5432
+      APP_POSTGRES_USER: appuser
+      APP_POSTGRES_PASSWORD: apppassword
+      APP_POSTGRES_DB: appdb
+      
+      # Database Pool Settings
+      APP_POSTGRES_POOL_SIZE: 10
+      APP_POSTGRES_MAX_OVERFLOW: 20
+      APP_POSTGRES_POOL_TIMEOUT: 30
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: dev
+    container_name: oilops-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - api
+
+volumes:
+  db_data:
+
