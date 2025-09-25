@@ -1,0 +1,30 @@
+# Environment Configuration for Oil Shipment System
+# Copy this content to .env file if you want to override default values
+
+# Application Settings
+APP_PROJECT_NAME=Oil Shipment AI Ops
+APP_ENV=development
+APP_DEBUG=true
+APP_API_V1_PREFIX=/api/v1
+APP_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000
+
+# Database Configuration
+APP_POSTGRES_HOST=db
+APP_POSTGRES_PORT=5432
+APP_POSTGRES_USER=appuser
+APP_POSTGRES_PASSWORD=apppassword
+APP_POSTGRES_DB=appdb
+
+# Database Pool Settings
+APP_POSTGRES_POOL_SIZE=10
+APP_POSTGRES_MAX_OVERFLOW=20
+APP_POSTGRES_POOL_TIMEOUT=30
+
+# Frontend Configuration
+VITE_API_URL=http://localhost:8000
+
+# Security (for future use)
+# APP_SECRET_KEY=your-secret-key-here
+# APP_JWT_SECRET=your-jwt-secret-here
+# APP_JWT_ALGORITHM=HS256
+# APP_ACCESS_TOKEN_EXPIRE_MINUTES=30
