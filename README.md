@@ -24,7 +24,6 @@ Traditional security measures (air-gaps, physical isolation) are insufficient in
 A defense-in-depth platform built on **cyber resilience principles** — designed not only to protect, but to ensure rapid recovery and business continuity even after a successful attack.
 
 ### 🏗️ Architecture Components
-### 🏗️ Architecture Components
 
 1. 🔐 **Network Microsegmentation**
    - DMZ between IT/OT
