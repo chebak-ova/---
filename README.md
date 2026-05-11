@@ -24,15 +24,31 @@ Traditional security measures (air-gaps, physical isolation) are insufficient in
 A defense-in-depth platform built on **cyber resilience principles** — designed not only to protect, but to ensure rapid recovery and business continuity even after a successful attack.
 
 ### 🏗️ Architecture Components
-flowchart TD
-    A["1. Network Microsegmentation\n• DMZ between IT/OT\n• Segmentation by node\n• Lateral movement prevention"] 
-    --> B["2. OT-aware IDS/IPS\n• Protocol parsing: Modbus, OPC UA\n• Real-time anomaly detection\n• Signature + behavioral analysis"]
-    --> C["3. SIEM with OT Support\n• Centralized event correlation\n• Multi-vector attack detection\n• Automated alerting"]
-    --> D["4. Vulnerability Management\n• CVE scanning + prioritization\n• Asset criticality mapping"]
-    --> E["5. Backup & Disaster Recovery\n• WORM storage for configs\n• Automated recovery playbooks\n• RTO/RPO compliance"]
+### 🏗️ Architecture Components
 
-    classDef layer fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
-    class A,B,C,D,E layer;
+1. 🔐 **Network Microsegmentation**
+   - DMZ between IT/OT
+   - Segmentation by shipment node
+   - Lateral movement prevention
+
+2. 🛡️ **OT-aware IDS/IPS**
+   - Protocol parsing: Modbus, OPC UA
+   - Real-time anomaly detection
+   - Signature + behavioral analysis
+
+3. 📊 **SIEM with OT Support**
+   - Centralized event correlation
+   - Multi-vector attack detection
+   - Automated alerting
+
+4. 🔍 **Vulnerability Management**
+   - CVE scanning + prioritization
+   - Asset criticality mapping
+
+5. 💾 **Backup & Disaster Recovery**
+   - WORM storage for configs
+   - Automated recovery playbooks
+   - RTO/RPO compliance
 
 ---
 
