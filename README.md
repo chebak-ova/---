@@ -2,10 +2,6 @@
 
 > A comprehensive IT solution ensuring business continuity of oil product shipment processes under advanced cyber threats
 
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Status](https://img.shields.io/badge/status-research-green)
-![Python](https://img.shields.io/badge/python-3.8+-blue)
-
 ---
 
 ## 🎯 Problem Statement
