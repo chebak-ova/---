@@ -24,21 +24,15 @@ Traditional security measures (air-gaps, physical isolation) are insufficient in
 A defense-in-depth platform built on **cyber resilience principles** — designed not only to protect, but to ensure rapid recovery and business continuity even after a successful attack.
 
 ### 🏗️ Architecture Components
-### 🏗️ Architecture Components
-
-```mermaid
 flowchart TD
-    A["<b>1. Network Microsegmentation</b><br/>• DMZ between IT/OT<br/>• Segmentation by shipment node<br/>• Lateral movement prevention"] 
-    --> B["<b>2. OT-aware IDS/IPS</b><br/>• Protocol parsing: Modbus, OPC UA<br/>• Real-time anomaly detection<br/>• Signature + behavioral analysis"]
-    --> C["<b>3. SIEM with OT Support</b><br/>• Centralized event correlation<br/>• Multi-vector attack detection<br/>• Automated alerting"]
-    --> D["<b>4. Vulnerability Management</b><br/>• CVE scanning + prioritization<br/>• Asset criticality mapping"]
-    --> E["<b>5. Backup & Disaster Recovery</b><br/>• WORM storage for configs<br/>• Automated recovery playbooks<br/>• RTO/RPO compliance"]
+    A["1. Network Microsegmentation\n• DMZ between IT/OT\n• Segmentation by node\n• Lateral movement prevention"] 
+    --> B["2. OT-aware IDS/IPS\n• Protocol parsing: Modbus, OPC UA\n• Real-time anomaly detection\n• Signature + behavioral analysis"]
+    --> C["3. SIEM with OT Support\n• Centralized event correlation\n• Multi-vector attack detection\n• Automated alerting"]
+    --> D["4. Vulnerability Management\n• CVE scanning + prioritization\n• Asset criticality mapping"]
+    --> E["5. Backup & Disaster Recovery\n• WORM storage for configs\n• Automated recovery playbooks\n• RTO/RPO compliance"]
 
-    style A fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-    style B fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-    style C fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-    style D fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-    style E fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef layer fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
+    class A,B,C,D,E layer;
 
 ---
 
